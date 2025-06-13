@@ -40,8 +40,8 @@ func MustLoad() *Config {
 		log.Fatalf("Config file not found : %s", configPath)
 	}
 
+	// load configuration and return
 	var cfg Config
-
 	err = cleanenv.ReadConfig(configPath, &cfg)
 	if err != nil {
 		log.Fatalf("can not read config file: %s", err.Error())
